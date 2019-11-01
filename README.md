@@ -87,7 +87,7 @@ length: 2
 __proto__: HTMLCollection
 ```
 
-* 
+* `document.querySelector('.list').children[0]`
 ```
 document.querySelector('.list').children[0]
 <li>​You can see how pages are made​</li>​
