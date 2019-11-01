@@ -118,6 +118,62 @@ null
 ```
 <p id="created">our new element</p>
 ```
+- The DOM activity: Find a DOM Node
+- how would you implement `getElementsByAttribute('data-js-name', 'foo')`
+- Suggested steps
+- get all the lements in the DOM
+- check if they have the particular attribute
+- check that the attribute has the correct value
+
+- Solution use a script `activity.js` and add it to `index_one.html`
+```
+function getElementByAttribute(attribute, value) {
+    var all = document.getElementsByTagName('*');
+    var found = [];
+
+    for (var i =0; i <all.length; i++) {
+        element = all[i];
+        if (all[i].getAtrribute(attribute) === value) {
+            found.push(all[i]);
+        }
+    }
+    return found;
+}
+```
+- Explanation
+function get elements by attribute and it takes in the designated attribute
+
+and the value.
+
+So the first thing I do is I get all of the elements in the DOM here.
+
+So I do get elements by tag name and then if you do a star that's a regular expression it just pulls
+
+in all of the elements.
+
+And then I initialize an empty array here called found because that's going to be our empty array of
+
+found elements that will ultimately return.
+
+Then I loop through all of the elements and for each element in there I check if get attribute has this
+
+particular attribute here.
+
+And if it has that attribute it equals the value and if that's true it pushes it into the found array.
+
+Otherwise if it doesn't equal that then it just keeps going throughout the loop.
+
+Now to test this out I took my original index ID Tamal and I added a couple unique attributes here.
+
+And then I just kept the class header.
+
+- Test using:
+`getElementsByAttribute("category", "feature")`
+and
+`getElementsByAttribute("class", "header")`
+
+
+
 
 
 
