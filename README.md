@@ -1,7 +1,7 @@
 # javascript_react_for_devs
 https://www.udemy.com/course/js-and-react-for-devs
 
-### DOM
+### 2. DOM
 #### what is the DOM
 - use `DOM/index.html`
 - glorified javascript object that we c an use to manipulate our page
@@ -172,6 +172,64 @@ And then I just kept the class header.
 and
 `getElementsByAttribute("class", "header")`
 
+### 3. Events and Callbacks
+#### Events
+- occurences in the browser that fire signals
+- `click` which happens when a user clicks 
+- `resize` which occurs when the user resizes the document 
+- `keydown` , `keypress`,  and `keyup` which occurs when the user interacts with the keyboard
+- `mouseover` which occurs when a mouse is moved over an element
+- `load` which occurs when the resource has finished loading
+
+#### Callbacks
+```
+window.addEventListener('load', function(event) {
+    console.log('All resources finished loading!);
+});
+```
+- adds event listener to the window object
+- the listener waits for the load event and then once that event has been triggered it calls the function in the second parameter and that function passes in an event object; the function in the second parameter is a callback
+
+- callback: Put simply is a function that's passed into another function and called after something occurs with
+regards to events. The callback is an event handler.
+
+- EXAMPLE
+Let's say you have an html page with some buttons on it.
+
+Then when you go to the actual page they don't do anything.
+
+Let's add some event listeners 
+* Button one
+- for button one we are waiting for a click `addEventListener('click')`
+- the second parameter will be our callback function; anonymous in this case
+```
+function() {
+  console.log('you clicked the button!'
+```
+
+* Button two
+ - for button two we are waiting for mouseover `addEventListener('mouseover'`
+ - the anonymous callback function changes the text of the button whenever the user mouses over it to `you hovered and over me`   
+
+* Custome events
+- example our custome event is `timeEvent'` added to the event listener`addEventListener('timeEvent'`
+- our callback function is stateTime
+- pass in event `e` and we'll alert some data about `e`
+- create a custom event object using the special javascript object for custom events; `CustomEvent`; and we're going to call this event `timeEvent`
+- add data using property `detail` whose value is a new Date() objects
+
+Explanation
+while we wait for this `timeEvent` event we call the function `stateTime` which takes in an event object, `myEvent` which is a `CustomEvent`;
+Custom event is an object and has a named `timeEvent` just
+like the one we're listening for; it has the property `detail` which gives us the customer time;
+finally, the body has to dispatch the event
+`document.body.addEventListener('timeEvent')`
+- Test it on the browswer
+![custom event](callbacks/custom_event.png)
+
+* Events and Callbacks Activity: Website and Theme Toggler
+####
+####
 
 
 
